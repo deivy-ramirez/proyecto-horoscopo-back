@@ -1,0 +1,30 @@
+{
+  "admins": [
+    {
+      "adminName": "deivy",
+      "password": "7804"
+    },
+    {
+      "adminName": "nandito",
+      "password": "zaq"
+    },
+    {
+      "adminName": "mireya",
+      "password": "315461"
+    }
+  ],
+  "users": [
+    {
+      "username": "nando",
+      "password": "54321"
+    },
+    {
+      "username": "antonio",
+      "password": "1234"
+    },
+    {
+      "username": "franchesco",
+      "password": "9876"
+    }
+  ]
+}
