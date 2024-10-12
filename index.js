@@ -8,10 +8,9 @@ const app = express();
 app.use(urlencoded({extended: true}))
 app.use(json())
 
-app.use(cors({
-    origin: 'https://proyecto-horoscopo-front.vercel.app' // Permitir solo tu frontend
-  }));
-  
+app.use(cors())
+app.use('/v1/signos', router);
+
 app.listen(4000, ()=>{
     console.log('listening at port 4000');
 })
