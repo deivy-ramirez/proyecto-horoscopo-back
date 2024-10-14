@@ -1,17 +1,28 @@
 const express = require('express');
-const {urlencoded, json} = require('express');
+const { urlencoded, json } = require('express');
 const router = require('./routes/signos.routes.js');
 const cors = require('cors');
+const connectDB = require('./mongo'); 
 
 const app = express();
 
-app.use(urlencoded({extended: true}))
-app.use(json())
+connectDB()
+  .then(() => {
+    console.log('Connected to MongoDB');
+    app.listen(PORT, () => {
+      console.log(`Servidor corriendo en el puerto ${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error('Error connecting to MongoDB:', err);
+    process.exit(1);
+  });
+
+app.use(urlencoded({ extended: true }));
+app.use(json());
 
 app.use(cors({
-    origin: 'https://proyecto-horoscopo-front.vercel.app' // Permitir solo tu frontend
-  }));
+  origin: 'https://proyecto-horoscopo-front.vercel.app'
+}));
 
-app.listen(4000, ()=>{
-    console.log('listening at port 4000');
-})
+const PORT = process.env.PORT || 4000;
