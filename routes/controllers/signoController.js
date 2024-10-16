@@ -1,8 +1,6 @@
-
 const path = require('path');
-const Signo = require(path.resolve(__dirname, '../db/signo')); // Usa una ruta absoluta
-//const Signo = require('../db/signo');
-const Usuario = require('../db/usuario');
+const Usuario = require('../../usuario');
+const Signo = require('../../signo');
 
 const getAllSignos = async (req, res) => {
   try {

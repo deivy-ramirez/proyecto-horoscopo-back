@@ -1,5 +1,7 @@
 const express = require('express');
 const { urlencoded, json } = require('express');
+const Usuario = require('./usuario');
+const Signo = require('./signo');
 const router = require('./routes/signos.routes.js');
 const cors = require('cors');
 const connectDB = require('./mongo'); 
